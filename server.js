@@ -15,6 +15,9 @@ const db = new sqlite3.Database(path.join(__dirname, 'database.db'), (err) => {
     if (err) console.error('Database opening error: ', err.message);
     else console.log('Connected to SQLite database.');
 });
+app.get('/', (req, res) => {
+  res.send('AI Video Generator Server is Live & Running! 🚀');
+});
 
 db.run(`CREATE TABLE IF NOT EXISTS users (
     device_id TEXT PRIMARY KEY,
